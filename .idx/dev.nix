@@ -21,7 +21,7 @@
     workspace = {
       # Runs when a workspace is first created with this `dev.nix` file
       onCreate = {
-        npm-install = "pnpm install";
+        npm-install = "bun i";
       };
       # To run something each time the environment is rebuilt, use the `onStart` hook
     };
@@ -30,7 +30,7 @@
       enable = true;
       previews = [
         {
-          command = [ "pnpm" "run" "dev" "--" "--port" "$PORT" "--host" "0.0.0.0" ];
+          command = [ "bun" "dev" "--" "--port" "$PORT" "--host" "0.0.0.0" ];
           manager = "web";
           id = "web";
         }
